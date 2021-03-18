@@ -32,7 +32,7 @@ def get_m2m_text(title, field):
     return inner
 
 
-def get_datetime_text(title, field, time_format='%Y-%m-%d'):
+def get_datetime_text(title, field, time_format='%Y-%m-%d %H:%M'):
     """
     对于Stark组件中定义列时，choice如果想要显示中文信息，调用此方法即可。
     :param time_format:
@@ -468,7 +468,7 @@ class StarkHandler(object):
         if form.is_valid():
             response = self.save(form, request, is_update=False, *args, **kwargs)
             # 在数据库保存成功后，跳转回列表页面(携带原来的参数)。
-            return redirect(response or self.reverse_list_url(*args, **kwargs))
+            return response or redirect(self.reverse_list_url(*args, **kwargs))
         return render(request, self.add_template or 'stark/change.html', {'form': form})
 
     def change_view(self, request, pk, *args, **kwargs):

@@ -21,22 +21,23 @@
     <div class="nav">
         <div class="logo-area left ">
             <a href="#">
-                <img class="logo" src="{% static 'stark/imgs/logo.svg' %}">
-                <span style="font-size: 18px;">舟山边检 </span>
+                <img class="logo" src="{% static 'stark/imgs/abc.ico' %}">
+                <span style="font-size: 18px;">hello world</span>
             </a>
         </div>
 
         <div class="left-menu left">
-            <a class="menu-item">管理</a>
-            <a class="menu-item">用户信息</a>
-            <div class="menu-item">
-                <span>使用说明</span>
-                <i class="fa fa-caret-down" aria-hidden="true"></i>
-                <div class="more-info">
-                    <a href="#" class="more-item">管他什么菜单</a>
-                    <a href="#" class="more-item">实在是编不了</a>
+            <a class="menu-item" href="http://www.baidu.com" target="_blank">百度一下</a>
+            <a class="menu-item" href="http://www.shipxy.com/" target="_blank">船讯网</a>
+            <a class="menu-item" href="https://www.hifleet.com/web" target="_blank">船队在线/a>
+                <div class="menu-item">
+                    <span>使用说明</span>
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    <div class="more-info">
+                        <a href="#" class="more-item">管他什么菜单</a>
+                        <a href="#" class="more-item">实在是编不了</a>
+                    </div>
                 </div>
-            </div>
         </div>
 
         <div class="right-menu right clearfix">
@@ -47,27 +48,27 @@
                 </a>
 
                 <div class="more-info">
-                    <a href="#" class="more-item">个人信息</a>
-                    <a href="#" class="more-item">注销</a>
+                    {#                    <a href="#" class="more-item">个人信息</a>#}
+                    <a href="{% url 'logout' %}" class="more-item">注销</a>
                 </div>
             </div>
 
             <a class="user-menu right">
-                消息
+                ...
                 <i class="fa fa-commenting-o" aria-hidden="true"></i>
-                <span class="badge bg-success">2</span>
+                <span class="badge bg-success">99+</span>
             </a>
 
             <a class="user-menu right">
-                通知
+                ...
                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                <span class="badge bg-success">2</span>
+                <span class="badge bg-success">99+</span>
             </a>
 
             <a class="user-menu right">
-                任务
+                ...
                 <i class="fa fa-bell-o" aria-hidden="true"></i>
-                <span class="badge bg-danger">4</span>
+                <span class="badge bg-danger">99+</span>
             </a>
         </div>
 
@@ -104,7 +105,7 @@
         bootcssVer: 3,
         startDate: new Date(),
         autoclose: true,
-        todayBtn : true,
+        todayBtn: true,
         pickerPosition: "bottom-left"
     });
 </script>

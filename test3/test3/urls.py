@@ -14,10 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path, include
 from stark.service.v1 import site
+from web.views import account
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', site.urls),
+    path('index/', account.index,name='index'),
+    path('register/', account.register, name='register'),
+    path('logout/', account.logout, name='logout'),
+    path('zhoushan/', site.urls),
+    re_path(r'^rbac/', include(('rbac.urls', 'rbac'), namespace='rbac')),
+    path('', account.login, name='login'),
+
 ]

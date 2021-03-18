@@ -28,6 +28,8 @@ class RbacMiddleware(MiddlewareMixin):
             if re.match(valid_url, current_url):
                 # 白名单中的URL无需权限验证即可访问
                 return None
+            elif re.match('^/$',current_url):
+                return None
 
         permission_dict = request.session.get(settings.PERMISSION_SESSION_KEY)
         if not permission_dict:

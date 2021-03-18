@@ -90,6 +90,7 @@ class ShipAgentHandler(StarkHandler):
             if form.is_valid():
                 title_num = form.instance.title_id  # 船舶计划名称的id
                 form.instance.ship_id = ship_id
+                form.instance.agent_id = user_id
                 form.instance.boat_status_id = title_num  # 船舶状态的id
                 form.save()
                 form.instance.ship.boat_status_id = title_num
